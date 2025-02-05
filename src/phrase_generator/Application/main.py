@@ -28,15 +28,23 @@ def generar_contenido(tipo):
         return random.choice(frases_hp)
     elif tipo == "3":
         return random.choice(frases_juego_tronos)
-    else:
+    elif tipo != "0":
         return "Opción no válida, prueba de nuevo."
 
-def start():
+def menu():
     print("📢 Bienvenido al Generador de Contenido Aleatorio 📢")
     print("Elige una opción:")
     print("1 - ¿Eres de El señor de los anillos?")
     print("2 - ¿Eres de Harry Potter?")
     print("3 - ¿Eres de Juego de tronos?")
+    print("0 - Salir")
 
-    opcion = input("Introduce el número de tu elección: ")
-    print(generar_contenido(opcion))
+
+
+def start():
+    opcion = '1'
+    while opcion != '0':
+        menu()
+        opcion = input("Introduce el número de tu elección: ")
+        if opcion != '0':
+            print(generar_contenido(opcion))
